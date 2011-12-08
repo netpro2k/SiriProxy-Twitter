@@ -3,10 +3,11 @@
 ##########################
 #NOTICE: Modifying these options in this file has no effect. You must put them in SiriProxy's config.yml!
 ##########################
-    
+
     - name: 'Twitter'
       git: 'git://github.com/netpro2k/SiriProxy-Twitter.git'
-      consumer_key: "YOUR_KEY" 
+      consumer_key: "YOUR_KEY"
       consumer_secret: "YOUR_SECRET"
-      oauth_token: "YOUR_TOKEN" 
+      oauth_token: "YOUR_TOKEN"
       oauth_token_secret: "YOUR_TOKEN_SECRET"
+      image_url: "http://cl.ly/1l040J1A392n0M1n1g35/content"
