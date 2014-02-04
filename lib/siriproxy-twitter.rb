@@ -2,14 +2,14 @@ require 'twitter'
 
 class SiriProxy::Plugin::Twitter < SiriProxy::Plugin
   def initialize(config = {})
-    @config = config 
-    
+    @config = config
+
     ::Twitter.configure do |config|
-      config.consumer_key = @config['consumer_key'] 
+      config.consumer_key = @config['consumer_key']
       config.consumer_secret = @config['consumer_secret']
-      config.oauth_token = @config['oauth_token'] 
+      config.oauth_token = @config['oauth_token']
       config.oauth_token_secret = @config['oauth_token_secret']
-    end 
+    end
 
     @twitterClient = ::Twitter::Client.new
   end
@@ -21,7 +21,7 @@ class SiriProxy::Plugin::Twitter < SiriProxy::Plugin
     object = SiriAddViews.new
     object.make_root(last_ref_id)
     answer = SiriAnswer.new("Tweet", [
-      SiriAnswerLine.new('logo','http://cl.ly/1l040J1A392n0M1n1g35/content'), # this just makes things looks nice, but is obviously specific to my username
+      SiriAnswerLine.new('logo', @config['image_url']),
       SiriAnswerLine.new(tweetText)
     ])
     object.views << SiriAnswerSnippet.new([answer])
